@@ -1,14 +1,15 @@
 {
   "name": "latihanexpress2",
   "version": "1.0.0",
-  "description": "Basic Express",
+  "description": "",
   "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "triangga",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "license": "ISC"
 }
