@@ -31,7 +31,7 @@
 
     <section class="jumbotron text-center">
       <div class="container">
-        <h1 class="jumbotron-heading">HacktivCASH</h1>
+        <h1 class="jumbotron-heading">Hallo, {{name}}</h1>
         <p class="lead text-muted"> is obsessed with creating and sharing unique and authentic product experiences that stimulate our fans' imaginations and fuel their geek core.</p>
         <p>
           <a href="#" class="btn btn-primary">Browse our collection</a>
@@ -44,16 +44,11 @@
       <div class="container">
 
         <div class="row">
-        {{#each items}}
-          <div class="card">
-            <img src="{{image}}" alt="Card image cap">
-            <p class="card-text">{{description}}</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-warning">Lihat</a>
-              <a href="#" class="btn btn-secondary">Masukkan ke keranjang</a>
-            </div>
-          </div>
-        {{/each}}
+            <form action="" action="/form" method="POST">
+                <input type="text" class="form-control" name="name" placeholder="inout your name">
+                <br>
+                <button class="btn btn-sm btn-primary" type="submit"> Print name</button>
+            </form>
         </div>
       </div>
     </div>
