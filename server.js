@@ -18,36 +18,32 @@ app.use(bodyParser.urlencoded({
 }))
 
 
-//middleware
-    // const middleware1 = (req, res, next) => {
-    //     console.log('Middleware berjalan')
-    //     next()
-    // }
+// middleware example
+    const middleware1 = (req, res, next) => {
+        console.log('Middleware berjalan')
+        next()
+    }
 
-    // const middleware2 = (req, res, next) => {
-    //     console.log('Middleware 2 berjalan')
-    //     next()
-    // }
+    const middleware2 = (req, res, next) => {
+        console.log('Middleware 2 berjalan')
+        next()
+    }
 
-    // app.use(middleware1)
-    // app.use(middleware2)
-//end middleware
+    app.use(middleware1)
+    app.use(middleware2)
+// end middleware
 
 
 //routing
 
-    //basic get routing
-    // app.get('/',(req,res)=>{
-    //     res.send("Hallo world")
-    // })
-
-    //rendering template view
-        app.get('/',(req, res) =>{
-            res.render('index',{
-                items : data
-            })
+    //rendering template view index
+    app.get('/',(req, res) =>{
+        res.render('index',{
+            items : data
         })
-    //detail route
+    })
+        
+    //detail view
     app.get('/detail/:id',(req, res) =>{
         const item = data.find(data =>{
             return data.id === parseInt(req.params.id)
@@ -57,25 +53,27 @@ app.use(bodyParser.urlencoded({
         })
     })
 
-    // post route example
-        app.get('/form',(req, res) =>{
-            res.render('form')
-        })
+    // route get view form 
+    app.get('/form',(req, res) =>{
+        res.render('form')
+    })
 
-        app.post('/form',(req, res) =>{
-
-            res.render('form',{
-                name : req.body.name
-            })
+    // route post req example
+    app.post('/form',(req, res) =>{
+        res.render('form',{
+            name : req.body.name
         })
+    })
     
-    //with param example
+    // make res to variable
     const message = (req,res) => {
         res.send(`namanya saya  : ${req.params.nama}`)
     }
 
+    //route get with param example
     app.get('/with-params/:nama',message)
 
+    
     //redirect route 
     app.get('/redirect',(req, res) => {
         res.redirect('https://github.com/trianggautama')
