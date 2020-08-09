@@ -31,32 +31,11 @@
 
     <section class="jumbotron text-center">
       <div class="container">
-        <h1 class="jumbotron-heading">HacktivCASH</h1>
-        <p class="lead text-muted"> is obsessed with creating and sharing unique and authentic product experiences that stimulate our fans' imaginations and fuel their geek core.</p>
-        <p>
-          <a href="#" class="btn btn-primary">Browse our collection</a>
-          <a href="#" class="btn btn-secondary">Contact us</a>
-        </p>
+        <h1 class="jumbotron-heading">Halaman Detail</h1>
+            <img src="{{item.image}}" alt="Card image cap">
+            <p class="card-text pt-4">{{item.description}}</p>
       </div>
     </section>
-
-    <div class="album text-muted">
-      <div class="container">
-
-        <div class="row">
-        {{#each items}}
-          <div class="card">
-            <img src="{{image}}" alt="Card image cap">
-            <p class="card-text">{{description}}</p>
-            <div class="text-center">
-              <a href="/detail/{{id}}" class="btn btn-warning">Lihat</a>
-              <a href="#" class="btn btn-secondary">Masukkan ke keranjang</a>
-            </div>
-          </div>
-        {{/each}}
-        </div>
-      </div>
-    </div>
 
     <footer class="text-muted">
       <div class="container">

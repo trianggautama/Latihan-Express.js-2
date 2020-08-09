@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({
     extended:false 
 }))
 
+
 //middleware
     // const middleware1 = (req, res, next) => {
     //     console.log('Middleware berjalan')
@@ -46,6 +47,15 @@ app.use(bodyParser.urlencoded({
                 items : data
             })
         })
+    //detail route
+    app.get('/detail/:id',(req, res) =>{
+        const item = data.find(data =>{
+            return data.id === parseInt(req.params.id)
+        })
+        res.render('detail',{
+            item : item
+        })
+    })
 
     // post route example
         app.get('/form',(req, res) =>{
